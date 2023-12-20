@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart Quantity</title>
+    <style>
+        
+    </style>
+</head>
+<body>   
+
+  <button onclick="
+  updateCartQuantity()
+  ">Show Quantity</button>
+
+  <button onclick="  
+  updateCartQuantity(1)
+  ">Add to Cart</button>
+
+  <button onclick="    
+  updateCartQuantity(2)
+  ">+2</button>
+
+  <button onclick="   
+  updateCartQuantity(3)
+  ">+3</button>
+  
+  <button onclick="
+  cartQuantity = 0;
+  console.log('Cart was reset.');
+  updateCartQuantity()
+  ">Reset Cart</button>
+
+  <button onclick="
+  updateCartQuantity(-1)
+  ">Remove from cart</button>
+
+  <button onclick="
+  updateCartQuantity(-2)
+  ">-2</button>
+
+  <button onclick="
+  updateCartQuantity(-3)
+  ">-3</button>
+  <p class="js-screen">Cart quantity: 0</p>
+    <script>
+      let cartQuantity = 0;
+      let maxCartQuantity = 10;   
+      function updateCartQuantity(button=0){
+        cartQuantity +=button;
+        if (cartQuantity>maxCartQuantity){
+          alert('This cart is full');
+          cartQuantity = 10;
+          return;
+        }else if (cartQuantity<0){
+          alert('Not enough items in the cart');
+          cartQuantity = 0;
+          return;
+        }        
+        showOnScreen();
+      }   
+
+      function showOnScreen(){
+        document.querySelector('.js-screen').innerHTML = `Cart quantity: ${cartQuantity}`;
+      }
+    </script>
+        
+</body>
+</html>
+
+
+
+
+

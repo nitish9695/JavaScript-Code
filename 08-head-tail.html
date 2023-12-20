@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Head-Tail</title>
+    <style>
+        button{
+        font-size: 200%;
+        background-color: antiquewhite;
+        color: black;
+        width: 100px;
+      }
+    </style>
+</head>
+
+<body> 
+    <button onclick="
+        playGame('Head');
+    
+    ">Head</button>
+
+    <button onclick="
+        playGame('Tail');
+
+    ">Tail</button>
+
+    <button onclick="
+    results.win = 0;
+    results.loss = 0;
+    localStorage.removeItem('results');
+    alert('Score is Reset')
+    ">Reset</button>
+    
+    <script> 
+    let results =JSON.parse(localStorage.getItem('results')) || {
+            win: 0,
+            loss: 0
+        };
+
+    function computerChoice(){
+        let randomNumber = Math.random();
+        console.log(randomNumber);           
+    computerPrediction = (randomNumber<=0.5)? 'Head' : 'Tail'; 
+    return computerPrediction;
+    }   
+
+    function playGame(choice){
+        computerPrediction= computerChoice();
+        if (computerPrediction === choice){
+            result = 'win';
+            results.win ++;
+        }else {
+            result = 'loss';
+            results.loss ++;
+        }
+        alert(`You chose Tail, computer predict ${computerPrediction}, you ${result}
+        win: ${results.win}, Losses: ${results.loss}`);
+        localStorage.setItem('results', JSON.stringify(results));
+        }
+            
+      
+
+    </script>
+        
+</body>
+</html>
+
+
+
+
+
