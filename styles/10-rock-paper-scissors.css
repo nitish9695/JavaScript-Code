@@ -1,0 +1,38 @@
+body{
+  background-color: rgb(25,25,25);
+  color:White;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.title{
+  font-size:30px;
+  font-weight:bold;
+}
+.move-emogi{
+  height: 50px;
+}
+.move-button{
+  background-color: transparent;
+  border:2px solid white;
+  height:120px;
+  width:120px;
+  border-radius: 60px;
+  cursor: pointer;
+  margin: 5px;
+}
+.result{
+  font-family: Arial;
+  font-size:25px;
+  font-weight: bold;
+  margin-top:50px;
+}
+.move{
+  margin-bottom:50px;
+}
+.reset{
+  background-color: white;
+  color:black;
+  font-size: 15px;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+}
